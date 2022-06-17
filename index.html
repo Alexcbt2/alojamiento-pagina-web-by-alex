@@ -1,0 +1,153 @@
+﻿<html>
+<head>
+<title> ¿Cómo habilitar y configurar un servidor web usando el servicio IIS de Windows? </title>
+</head>
+
+<body bgcolor="#F5F5DC" text="black">
+<center>
+<img src="Cuerpo/Captura.jpg">
+<a href="index.html">
+<img src="Cuerpo/inicio.png"></a>
+<a href="AcercadeNosotros.html">
+<img src="Cuerpo/nosotros.png"></a>
+<a href="CiberCafeFaro.html">
+<img src="Cuerpo/ciber.png"></a>
+<a href="Valores.html">
+<img src="Cuerpo/valores.png"></a>
+<a href="Contactanos.html">
+<img src="Cuerpo/contactanos.png"></a>
+</center>
+
+
+
+<center>
+
+<br><h1>TUTORIAL DE COMO HACER UN ALOJAMIENTO EN WINDOWS SERVER 2019</h1>
+
+
+
+<p><h1>Introducción a IIS</p></h1>
+
+<p>IIS (Internet Information Server, por sus siglas en inglés) es un servidor web extensible que provee un conjunto de servicios para 
+sistemas operativos Windows. Esta característica permite convertir su máquina en un servidor web para poder publicar su sitio web 
+en el Internet —o en una red interna—. Este servicio convierte un PC en un servidor web para Internet o para una intranet, es decir 
+que en los ordenadores que tienen este servicio instalado se pueden publicar páginas web tanto local como remotamente.</p>
+
+<p>IIS ofrece soporte para los siguientes protocolos: HTTP, HTTPS, FTP, FTPS, SMTP y NNTP. Además provee características como: 
+múltiples mecanismos de autenticación, una arquitectura modular que permite una gestión organizada y completa de las funciones adicionales, 
+elementos de seguridad avanzada y optimizaciones de rendimiento.</p>
+
+<p><h2>¿Cómo se compara IIS con el resto de los servidores web?</h2></p>
+
+<p>Para el año 2016, IIS de Microsoft se ha mantenido como el servidor web más utilizado a nivel mundial. De acuerdo con el último análisis de 
+Netcraft en el año 2016, la participación de mercado de Microsoft ha ido en constante crecimiento desde el segundo trimestre de 2016, 
+manteniéndolo como el primer servidor web en términos generales, tomando en cuenta el total de la muestra de los sitios web publicados en la web.</p>
+
+<p>Sin embargo, cuando se evalúa la participación de mercado sobre las muestras de sitios web más activos, Apache y Nginx siguen en el tope 
+estadístico mientras que IIS tiene una participación de alrededor del 10%.</p>
+
+<p><h2>Instalar ASP.NET 3.5</h2></p>
+<p>Si su aplicación web utiliza ASP.NET en versiones desde la 2 hasta la 3.5 debe instalar dicho framework en su versión 3.5 antes de activar el módulo 
+de IIS y el propio módulo de ASP.NET. Para hacerlo siga el siguiente procedimiento:</p>
+
+<p>1.-Inicie sesión en su servidor a través del acceso noVNC o conexión de escritorio remoto.</p>
+<p>2.-Dirija el cursor a la parte superior derecha de la pantalla y haga clic sobre el ícono de búsqueda. Luego escriba cmd y haga clic derecho sobre el 
+ícono que aparecerá en la parte izquierda. Luego seleccione Ejecutar como Administrador (Run as Administrator) en la barra inferior:</p>
+<img src="Cuerpo/primera.png">  
+
+<p>3.-Copie y ejecute el siguiente comando en la aplicación de línea de comandos:</p>
+
+<img src="Cuerpo/Captura de pantalla 2022-06-15 190359.jpg">
+
+<p>4.-Espere hasta que se complete el proceso (que puede durar varios minutos) y luego cierre el cmd.</p>
+
+<p><h2>Habilitar los módulos de IIS y ASP.NET</h2></p>
+
+<p>Para habilitar los módulos de los servicios siga los pasos:</p>
+
+<p>1.-Una vez en el servidor, coloque el cursor en la esquina superior derecha de la pantalla y luego haga clic en Inicio (ícono de Windows). </p>
+<p>También puede presionar la tecla de Windows en el teclado si accede vía Escritorio Remoto. Luego abra el Administrador del servidor (Server Manager):</p>
+<img src="Cuerpo/segunda.png">
+
+<p>2.-Desde la sección "Panel" (Dashboard) haga clic en la opción Agregar roles y características (Add roles and features):</p>
+<img src="Cuerpo/Tercera.png">
+
+<p>3.-Se abrirá el "Asistente para agregar roles y características". Puede obviar la primera página de (Antes de comenzar) haciendo clic en Siguiente:</p>
+<img src="Cuerpo/Cuarta.png">
+
+<p>4.-En la página Tipo de instalación seleccione la opción Instalación basada en características o en roles (Role-based or feature-based installation) 
+y luego presione Siguiente.</p>
+<p>5.-En la página de Selección del servidor, seleccione el servidor en el cual desea activar IIS de la lista de opciones y haga clic en Siguiente.</p>
+
+<p>6.-En la página Roles del servidor busque la opción Web Server (IIS) y haga clic sobre esta. Aparecerá un mensaje en el cual debe presionar 
+Agregar características (Add features). Luego observará un checkmark en la opción seleccionada, cuando esto ocurra podrá hacer clic en Siguiente:</p>
+<img src="Cuerpo/quinta.png">
+
+<p>7.-En la página Características puede hacer clic en Siguiente sin seleccionar ninguna opción adicional.</p>
+<p>8.-En la página "Rol del servidor web (IIS)" también puede presionar Siguiente.</p>
+<p>9.-La configuración de la siguiente página ("Servicios del rol") dependerá de las características que desee agregar a su servidor. 
+Puede dejar los servicios predeterminados si no está seguro, de lo contrario personalice las características según los requerimientos de su plataforma web. 
+Expanda la categoría Application Development y seleccione la casilla ASP.NET 4.5 (si siguió la primera sección de este tutorial para instalar .NET 3.5 también 
+debe seleccionar la casilla ASP.NET 3.5):</p>
+<img src="Cuerpo/sexta.png">
+<p>10.-En la última página podrá confirmar todos los elementos correspondientes a la configuración dispuesta anteriormente. Verifique si todo es correcto
+y presione Instalar:</p>
+<img src="Cuerpo/Septima.png">
+<p>11.-El proceso de instalación durará varios minutos. Si la instalación es correcta verá la barra de progreso completa y un mensaje indicando 
+Instalación exitosa (Installation succeeded):</p>
+<img src="Cuerpo/Octava.png">
+<p><h3>¡Felicidades! En este punto tendrá instalado un servidor web con IIS listo para usar y publicar su sitio web al mundo. 
+Puede continuar con la siguiente sección para hacer una prueba rápida del servidor web.</h3></p>
+
+<p><h2>Probar la instalación del servidor web IIS</h2></p>
+
+<p>Puede realizar una prueba sencilla para comprobar que la instalación fue exitosa y que el servicio IIS se encuentra activo:</p>
+
+<p>1.-Dentro del servidor, abra el explorador de su preferencia y escriba lo siguiente en la barra de direcciones:</p>
+
+<img src="Cuerpo/Captura de pantalla 2022-06-15 190636.jpg">
+
+<p>Si la instalación es correcta, se mostrará la página principal de Microsoft IIS.</p>
+
+<p>2.-Es importante que también pueda abrir desde su computador local, así sabrá si el servidor web está disponible en la red. Para hacerlo simplemente utilice:</p>
+
+<img src="Cuerpo/Captura de pantalla 2022-06-15 190650.jpg">
+<p>En el cual la dirección 123.45.67.89 corresponderá a la dirección IP pública del servidor.</p>
+
+<p>Aquí un ejemplo de lo que debería ver si todo fue correcto:</p>
+<img src="Cuerpo/Novena.png">
+
+<p><h2>Configurar el servidor IIS</h2></p>
+<p>Una vez que hayamos completado nuestra instalación de IIS, debemos alojar el sitio web en cuestión para que funcione con dicho servicio. Si no tiene un sitio web, 
+puede utilizar el siguiente código HTML y  guardar el archivo en su ubicación de preferencia. En este ejemplo se guardará en la ruta C:\Website\index.html:</p>
+<img src="Cuerpo/Captura de pantalla 2022-06-15 185340.jpg">
+
+<p>Usaremos en este ejemplo el archivo de prueba, sin embargo, puede utilizar el enlace a su sitio web si el mismo ya está en desarrollo.</p>
+
+<p>1.-Vuelva a abrir el Administrador del servidor. En el menú de la parte superior derecha, seleccione la opción "Herramientas" (Tools) y haga clic en Administrador 
+de Internet Information Services (IIS):</p>
+<img src="Cuerpo/Desima.png">
+<p>2.-Despliegue las opciones del servidor y haga clic en la pestaña Sitios. Podrá observar que el sitio activo es el sitio predeterminado de IIS. Haga clic en Agregar 
+sitio web en la lista de opciones de la parte derecha:</p>
+<img src="Cuerpo/onceava.png">
+<p>3.-Indique el nombre del sitio web, especifique la ruta en la cual posee los archivos de su sitio web y haga clic en Aceptar:</p>
+<img src="Cuerpo/doceava.png">
+<p>4.-Para evitar errores, seleccione el sitio web predeterminado (Default) y haga clic en Detener.</p>
+<p>5.-Ahora podrá acceder a su sitio web en cualquier computador usando el nombre de dominio (si este está apuntando a dicha dirección IP) o la dirección IP del servidor. 
+También podrá acceder desde el propio Windows Server usando la dirección http://localhost:</p>
+<img src="Cuerpo/treeceaba.png">
+<p><h1>Felicidades, ha completado la configuración básica de su primer sitio web con IIS!</h1></p>
+</center>
+<center>
+<a href="index.html">Inicio</a> -
+<a href="AcercadeNosotros.html">AcercadeNosotros</a> - 
+<a href="CiberCafeFaro.html">CiberCafeFaro</a> -
+<a href="Valores.html">Valores</a> -
+<a href="Concactanos.html">Concactanos</a> <br>Copyright 2022 Mandanos mensaje via Email: <a href="mailto:Infociberfaro@gmail.com">Infociberfaro@gmail.com</a>
+</center>
+
+
+</body>
+</html>
+<>
+</>
